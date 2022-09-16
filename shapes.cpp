@@ -1,12 +1,16 @@
 #include <iostream>
 #include "shapes.h"
 
+//row = width, col = height
+
 void box(int width, int height) {
-	std::string box[width][height];
 
-	for (int w = 0; w < width; w++) {
+	int row = width;
+	int col = height;
 
-		for (int h = 0; h < height; h++) {
+	for (int r = 0; r < row; r++) {
+
+		for (int c = 0; c < col; c++) {
 
 			std::cout << " * ";
 
@@ -17,3 +21,34 @@ void box(int width, int height) {
 	}//end for loop
 
 }//end box method
+
+
+void checkerboard(int width, int height) {
+
+	int row = width;
+	int col = height;
+
+	bool oddLine = true;//This variable checks if its at a odd row, if so, add extra space and decrease the amount of star drawn in this line by 1
+	
+	for (int c = 0; c < col; c++) {
+		
+		for (int r = 0; r < row; r++) {
+
+			if (c % 2 != 0 && oddLine) {
+
+				r += 1;
+				std::cout << " ";
+				oddLine = false;
+
+			}//end condition
+				
+			std::cout << " *";
+
+		}//end for inner for loop
+
+		oddLine = true;
+		std::cout << "\n";
+
+	}//end for loop
+
+}//end checkerboard
