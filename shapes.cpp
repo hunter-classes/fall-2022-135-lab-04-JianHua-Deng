@@ -8,9 +8,9 @@ void box(int width, int height) {
 	int row = width;
 	int col = height;
 
-	for (int r = 0; r < row; r++) {
+	for (int c = 0; c < col; c++) {
 
-		for (int c = 0; c < col; c++) {
+		for (int r = 0; r < row; r++) {
 
 			std::cout << " * ";
 

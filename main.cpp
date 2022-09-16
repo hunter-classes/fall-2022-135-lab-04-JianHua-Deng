@@ -3,11 +3,11 @@
 
 int main(){
 	std::cout << "Box: \n";
-	box(4, 5);
+	box(7, 4); //(width, height)
 
 	std::cout << "\n";
 
 	std::cout << "Checkerboard: \n";
-	checkerboard(12, 6);
+	checkerboard(12, 6);//(width, height)
 	
 }//end main
