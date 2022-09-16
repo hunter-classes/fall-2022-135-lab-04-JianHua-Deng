@@ -28,17 +28,15 @@ void checkerboard(int width, int height) {
 	int row = width;
 	int col = height;
 
-	bool oddLine = true;//This variable checks if its at a odd row, if so, add extra space and decrease the amount of star drawn in this line by 1
 	
 	for (int c = 0; c < col; c++) {
 		
 		for (int r = 0; r < row; r++) {
 
-			if (c % 2 != 0 && oddLine) {
+			if (c % 2 != 0 && r == 0) {
 
 				r += 1;
 				std::cout << " ";
-				oddLine = false;
 
 			}//end condition
 				
@@ -46,9 +44,14 @@ void checkerboard(int width, int height) {
 
 		}//end for inner for loop
 
-		oddLine = true;
 		std::cout << "\n";
 
 	}//end for loop
 
 }//end checkerboard
+
+void cross(int size) {
+
+
+
+}//end of cross
