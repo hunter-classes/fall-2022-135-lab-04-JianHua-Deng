@@ -25,6 +25,7 @@ std::string box(int width, int height) {
 
 }//end box method
 
+//------------------------------------------------------------------------------------------------------------------
 
 std::string checkerboard(int width, int height) {
 
@@ -56,6 +57,7 @@ std::string checkerboard(int width, int height) {
 
 }//end checkerboard
 
+//------------------------------------------------------------------------------------------------------------------
 
 std::string cross(int size) {
 
@@ -85,8 +87,7 @@ std::string cross(int size) {
 
 }//end of cross
 
-
-
+//------------------------------------------------------------------------------------------------------------------
 
 std::string lower(int length) {
 
@@ -108,7 +109,7 @@ std::string lower(int length) {
 
 }//end lower function
 
-
+//------------------------------------------------------------------------------------------------------------------
 
 std::string upper(int length) {
 
@@ -136,7 +137,7 @@ std::string upper(int length) {
 
 }//end upper function
 
-
+//------------------------------------------------------------------------------------------------------------------
 
 std::string trapezoid(int width, int height) {
 	
@@ -165,19 +166,47 @@ std::string trapezoid(int width, int height) {
 		decrements += 2;
 		trapezoid += "\n";
 
-
 	}//end for loop
 
 	return trapezoid;
 
 }//end trapezoid
 
+//------------------------------------------------------------------------------------------------------------------
+
 std::string checkerBoard3x3(int width, int height) {
-	
+
 	std::string board3x3;
+	bool addspace = false;
+	int count = 3;
+
+	for (int h = 1; h <= height; h++) {//setting h, w = 1 because only so, I would be able to % by 3
+
+		for (int w = 1; w <= width; w++) {
+	
+				if (!addspace) {
+					board3x3 += "*";
+				} else {
+					board3x3 += " ";
+				}//end else condition
+
+				if (w % 3 == 0 && w != width) {
+					addspace = !addspace;
+				}//end if condition
+
+		}//end inner for loop
 
 
+		if (h % 3 == 0) {//Needed to figure out the conditions for even when width isn't % 3 and it would work, as (16,11) isn't working 
+			
+			addspace = !addspace;
 
+		}//end condition
+		
+		board3x3 += "\n";
+
+	}//end for loop
+	
 	return board3x3;
 
-}//end of checkerBoard 
+}//end checkerBoard3x3

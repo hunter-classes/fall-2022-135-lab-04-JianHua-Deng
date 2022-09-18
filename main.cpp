@@ -5,7 +5,7 @@ int main(){
 
 	std::cout << "\n";
 
-	std::cout << "box(7,4):\n";
+	std::cout << "box(7, 4):\n";
 	std::string boxes = box(7, 4);//(width, height)
 	std::cout << "\n";
 	std::cout << boxes;
@@ -13,7 +13,7 @@ int main(){
 
 
 
-	std::cout << "checkerboard(12,6): \n";
+	std::cout << "checkerboard(12, 6): \n";
 	std::string board = checkerboard(12, 6);//(width, height)
 	std::cout << "\n";
 	std::cout << board;
@@ -51,11 +51,23 @@ int main(){
 	std::cout << "\n------------------\n"; // seperator 
 
 
-	std::cout << "trapezoid(11,7) <- Impossible \n";
+	std::cout << "trapezoid(11, 7): <- Impossible \n";
 	std::string trapezoid2 = trapezoid(11, 7);//(width, height)
 	std::cout << "\n";
 	std::cout << trapezoid2;
 	std::cout << "\n------------------\n"; // seperator 
 
+	
+	std::cout << "checkerBoard3x3(27, 27): \n";
+	std::string board1 = checkerBoard3x3(27, 27);//(width, height)
 	std::cout << "\n";
+	std::cout << board1;
+	std::cout << "\n------------------\n"; // seperator 
+
+	std::cout << "checkerBoard3x3(16, 11): \n";
+	std::string board2 = checkerBoard3x3(16, 11);//(width, height)
+	std::cout << "\n";
+	std::cout << board2;
+	std::cout << "\n------------------\n"; // seperator 
+	
 }//end main
