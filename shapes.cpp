@@ -192,11 +192,8 @@ std::string checkerBoard3x3(int width, int height) {
 				board3x3 += " ";
 			}//end else condition
 
-			if (w % 3 == 0 && w != width) {
-				addspace = !addspace;
-			}//end if condition
-
-			if (width % 3 != 0 && w == width) {//When width are not a multiple of 3 
+			//When width are not a multiple of 3, addspace are gonna be true when w = width and carry to next line, therefore it needs to be flipped its condition so it doesn't carry to the next line
+			if ((w % 3 == 0 && w != width) || (width % 3 != 0 && w == width) ) {
 				addspace = !addspace;
 			}//end if condition
 
