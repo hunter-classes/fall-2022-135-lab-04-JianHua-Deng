@@ -13,7 +13,7 @@ std::string box(int width, int height) {
 
 		for (int r = 0; r < row; r++) {
 
-			box +=  "*";
+			box += "*";
 
 		}//end inner for loop
 
@@ -33,9 +33,9 @@ std::string checkerboard(int width, int height) {
 	int row = width;
 	int col = height;
 
-	
+
 	for (int c = 0; c < col; c++) {
-		
+
 		for (int r = 0; r < row; r++) {
 
 			if (c % 2 != 0 && r == 0) {//checks if c is at a oddline and if r is at 0. This is so that we know if we should add a space and decrease a star or not
@@ -44,7 +44,7 @@ std::string checkerboard(int width, int height) {
 				checkerboard += " ";
 
 			}//end condition
-				
+
 			checkerboard += " *";
 
 		}//end for inner for loop
@@ -70,15 +70,16 @@ std::string cross(int size) {
 			if (stars == height || stars == size - height - 1) {
 
 				crosses += "*";
-			
-			} else {
+
+			}
+			else {
 
 				crosses += " ";
 
 			}//end else
 
 		}//end inner for loop
-		
+
 		crosses += "\n";
 
 	}//end for loop
@@ -118,7 +119,7 @@ std::string upper(int length) {
 	for (int height = 0; height < length; height++) {
 
 		for (int space = 0; space < height; space++) {
-			
+
 			upper_triangle += " ";
 
 		}//end 1st inner for loop
@@ -140,15 +141,15 @@ std::string upper(int length) {
 //------------------------------------------------------------------------------------------------------------------
 
 std::string trapezoid(int width, int height) {
-	
+
 	std::string trapezoid;
 	int decrements = 0;
-	
+
 	//checks if its a possible shape
 	if (height * 2 > width) {
 		return "Impossible shape";
 	}//end condition
-	
+
 	for (int h = height; h > 0; h--) {
 
 		for (int spaces = 0; spaces < height - h; spaces++) {
@@ -157,7 +158,7 @@ std::string trapezoid(int width, int height) {
 
 		}//end 1st inner for loop
 
-		for (int stars = 0; stars < width - decrements ; stars++) {
+		for (int stars = 0; stars < width - decrements; stars++) {
 
 			trapezoid += "*";
 
@@ -183,30 +184,35 @@ std::string checkerBoard3x3(int width, int height) {
 	for (int h = 1; h <= height; h++) {//setting h, w = 1 because only so, I would be able to % by 3
 
 		for (int w = 1; w <= width; w++) {
-	
-				if (!addspace) {
-					board3x3 += "*";
-				} else {
-					board3x3 += " ";
-				}//end else condition
 
-				if (w % 3 == 0 && w != width) {
-					addspace = !addspace;
-				}//end if condition
+			if (!addspace) {
+				board3x3 += "*";
+			}
+			else {
+				board3x3 += " ";
+			}//end else condition
+
+			if (w % 3 == 0 && w != width) {
+				addspace = !addspace;
+			}//end if condition
+
+			if (width % 3 != 0 && w == width) {//When width are not a multiple of 3 
+				addspace = !addspace;
+			}//end if condition
 
 		}//end inner for loop
 
 
 		if (h % 3 == 0) {//Needed to figure out the conditions for even when width isn't % 3 and it would work, as (16,11) isn't working 
-			
+
 			addspace = !addspace;
 
 		}//end condition
-		
+
 		board3x3 += "\n";
 
 	}//end for loop
-	
+
 	return board3x3;
 
 }//end checkerBoard3x3
