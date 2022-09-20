@@ -32,24 +32,33 @@ std::string checkerboard(int width, int height) {
 	std::string checkerboard;
 	int row = width;
 	int col = height;
+	bool addspace = false;
 
 
 	for (int c = 0; c < col; c++) {
 
 		for (int r = 0; r < row; r++) {
 
-			if (c % 2 != 0 && r == 0) {//checks if c is at a oddline and if r is at 0. This is so that we know if we should add a space and decrease a star or not
+			if (addspace) {
 
-				r += 1;
 				checkerboard += " ";
+				addspace = !addspace;
 
-			}//end condition
+			} else {
 
-			checkerboard += " *";
+				checkerboard += "*";
+				addspace = !addspace;
+
+			}//end else condition
 
 		}//end for inner for loop
 
 		checkerboard += "\n";
+
+		if (row % 2 == 0) {//Added this condition because when row is not an odd number, addspace would be not true on the next line and wouldn't indent
+			addspace = !addspace;
+		}//end condition
+
 
 	}//end for loop
 

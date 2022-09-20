@@ -13,12 +13,18 @@ int main(){
 
 
 
-	std::cout << "checkerboard(12, 6): \n";
-	std::string board = checkerboard(12, 6);//(width, height)
+	std::cout << "checkerboard(10, 6): \n";
+	std::string cboard = checkerboard(10, 6);//(width, height)
 	std::cout << "\n";
-	std::cout << board;
+	std::cout << cboard;
 	std::cout << "\n------------------\n"; // seperator 
 
+
+	std::cout << "checkerboard(11, 6): \n";
+	std::string cboard2 = checkerboard(11, 7);//(width, height)
+	std::cout << "\n";
+	std::cout << cboard2;
+	std::cout << "\n------------------\n"; // seperator 
 
 
 	std::cout << "cross(10): \n";
