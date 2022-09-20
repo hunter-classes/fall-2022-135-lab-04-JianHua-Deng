@@ -188,7 +188,6 @@ std::string checkerBoard3x3(int width, int height) {
 
 	std::string board3x3;
 	bool addspace = false;
-	int count = 3;
 
 	for (int h = 1; h <= height; h++) {//setting h, w = 1 because only so, I would be able to % by 3
 
