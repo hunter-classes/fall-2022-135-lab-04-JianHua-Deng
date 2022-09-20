@@ -208,7 +208,7 @@ std::string checkerBoard3x3(int width, int height) {
 		}//end inner for loop
 
 
-		if (h % 3 == 0) {//Needed to figure out the conditions for even when width isn't % 3 and it would work, as (16,11) isn't working 
+		if (h % 3 == 0) {
 
 			addspace = !addspace;
 
